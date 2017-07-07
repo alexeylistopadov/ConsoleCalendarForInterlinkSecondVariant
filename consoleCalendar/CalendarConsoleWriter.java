@@ -26,10 +26,11 @@ public class CalendarConsoleWriter {
     private void writeDays(ArrayList<LocalDate> days) {
         for (LocalDate day : days) {
             if (day.equals(LocalDate.now())) {
-                System.out.print("\u001B[34m" + day.getDayOfMonth() + "\t");
+                System.out.print("\u001B[34m");
             } else {
-                System.out.print(getDayColor(day.getDayOfWeek()) + day.getDayOfMonth() + "\t");
+                System.out.print(getDayColor(day.getDayOfWeek()));
             }
+            System.out.print(day.getDayOfMonth() + "\t");
             if (day.getDayOfWeek().getValue() == 7) {
                 System.out.println();
             }
